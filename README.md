@@ -8,10 +8,11 @@
 4. AmoCRM Library
     - amocrm-api-php
     - amocrm-oauth-client
+5. Docker (ветка docker)
 
 ### Запуск
 
-Для запуска приложения необходимо наличие composer и npm
+Для запуска приложения необходимо наличие composer и npm (запуск через docker в ветке 'docker')
 
 0. Создать в амоМаркете внешнюю интеграцию
 
