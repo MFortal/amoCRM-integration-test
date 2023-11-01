@@ -3,9 +3,7 @@
 namespace App\Services;
 
 use AmoCRM\Client\AmoCRMApiClient;
-use AmoCRM\OAuth2\Client\Provider\AmoCRM;
 use League\OAuth2\Client\Token\AccessToken;
-
 use League\OAuth2\Client\Grant\RefreshToken;
 use App\Models\TokenApi;
 use Carbon\Carbon;
@@ -21,7 +19,6 @@ class ApiClientService
     protected $redirectUri;
     protected $baseDomain;
 
-
     public function __construct()
     {
         $this->clientId = env('CLIENT_ID');
@@ -33,12 +30,7 @@ class ApiClientService
         $apiClient->setAccountBaseDomain($this->baseDomain);
         $this->apiClient = $apiClient;
 
-        $this->provider = new AmoCRM([
-            'clientId' => $this->clientId,
-            'clientSecret' => $this->clientSecret,
-            'redirectUri' => $this->redirectUri,
-        ]);
-        $this->provider->setBaseDomain($this->baseDomain);
+        $this->provider = new ProviderAmoService();
     }
 
     public function createOrUpdateAccessToken()
