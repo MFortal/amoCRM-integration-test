@@ -6,10 +6,14 @@
 2. PostgreSQL
 3. Boostrap
 4. AmoCRM Library
+    - amocrm-api-php
+    - amocrm-oauth-client
 
 ### Запуск
 
 Для запуска приложения необходимо наличие composer и npm
+
+0. Создать в амоМаркете внешнюю интеграцию
 
 1. Cкачать все необходимые пакеты
 
@@ -37,11 +41,11 @@ CLIENT_ID=""
 CLIENT_SECRET=""
 BASE_DOMAIN=test.amocrm.ru
 CLIENT_REDIRECT_URI=""
+#код авторизации
 AUTHORIZATION_CODE=""
-
 ```
 
-3. Создать БД (в ней хранятся токены)
+3. Накатить миграции в БД (в ней хранятся токены)
 
 ```
 php artisan migrate
@@ -63,3 +67,5 @@ php artisan serve
 
 Создать форму с полями: email, имя, телефон, цена.
 Данные из формы передавать в CRM в виде сделки с прикрепленном в ней контактом.
+
+\*Созданные сделки попадают в неразобранное
