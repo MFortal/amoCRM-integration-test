@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Form\LeadFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LeadFormController::class, 'index'])->name('form.index');
+Route::post('/send', [LeadFormController::class, 'send'])->name('form.send');
