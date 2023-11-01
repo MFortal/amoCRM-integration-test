@@ -10,28 +10,28 @@
         <div class="body mb-4">
             <div class="card-body">
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label">Имя</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 col-form-label">Имя</label>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" name="name" placeholder="Игорь" required>
                     </div>
                 </div>
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label">Email</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
                         <input type="email" class="form-control" name="email" placeholder="test@gmail.com" required>
                     </div>
                 </div>
 
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label">Телефон</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 col-form-label">Телефон</label>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" name="phone" placeholder="+7(999)789-78-89" onkeypress="return isKeyForPhone(event)" required>
                     </div>
                 </div>
 
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label">Цена</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 col-form-label">Цена</label>
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" name="price" placeholder="500" onkeypress="return isNumberKey(event)" required>
                     </div>
                 </div>
