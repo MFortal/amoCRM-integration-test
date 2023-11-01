@@ -55,7 +55,7 @@ class ApiClientService
 
     private function createAccessToken()
     {
-        $token = $this->provider->getAccessToken('authorization_code', ['code' => env('AUTHORIZATION_CODE')]);
+        $token = $this->provider->getAccessToken();
 
         $tokenApi = TokenApi::create([
             'client_id' => $this->clientId,

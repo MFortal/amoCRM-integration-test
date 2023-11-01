@@ -26,4 +26,9 @@ class ProviderAmoService
         ]);
         $this->provider->setBaseDomain($this->baseDomain);
     }
+
+    public function getAccessToken()
+    {
+        return $this->provider->getAccessToken('authorization_code', ['code' => env('AUTHORIZATION_CODE')]);
+    }
 }
