@@ -8,28 +8,25 @@
 4. AmoCRM Library
     - amocrm-api-php
     - amocrm-oauth-client
+5. Docker
 
 ### Запуск
 
-Для запуска приложения необходимо наличие composer и npm
+Для запуска приложения необходим docker и (опционально) улитита make
 
 0. Создать в амоМаркете внешнюю интеграцию
 
-1. Cкачать все необходимые пакеты
+1. Сбидлить контейнеры
 
 ```
-composer install
-```
-
-```
-npm install
+make build
 ```
 
 2. Скопировать .env.example в .env и прописать подключение к БД и данные для интеграции
 
 ```
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel_test
 DB_USERNAME=root
@@ -45,23 +42,31 @@ CLIENT_REDIRECT_URI=""
 AUTHORIZATION_CODE=""
 ```
 
-3. Накатить миграции в БД (в ней хранятся токены)
-
+3. Запустить контейнеры
 ```
-php artisan migrate
-```
-
-4. Выполнить
-
-```
-npm run dev
+make run
 ```
 
+4. Установить зависимости
+
 ```
-php artisan serve
+make install
 ```
 
-5. Перейти на http://127.0.0.1:8000/ (если не изменяли настройки)
+5. Накатить миграции в БД (в ней хранятся токены)
+
+```
+make migrate_run
+```
+
+6. Перейти на http://127.0.0.1:8000/ (если не изменяли настройки)
+   6.1. Если возникает ошибка "permission denied" на папку storage/, то неободимо права для /storage
+```
+make php
+```
+```
+sudo chmod 777 storage/ -R
+```
 
 ### Условие
 
