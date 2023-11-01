@@ -25,9 +25,9 @@ class SendFormRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'email' => ['required'],
-            'phone' => ['required'],
-            'price' => ['required'],
+            'email' => ['required', 'email:dns'],
+            'phone' => ['required', 'min:8'],
+            'price' => ['required', 'regex:/(^[0-9 ]+$)+/'],
         ];
     }
 }
